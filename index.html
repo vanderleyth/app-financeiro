@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>Financeiro</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">💳</div>
+      <div>
+        <div class="title">Dashboard Financeiro</div>
+        <div class="subtitle" id="subtitle">Resumo do mês</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <select id="monthSelect" class="select"></select>
+      <button id="refreshBtn" class="btn">Atualizar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card" id="cardDespesas">
+        <div class="card-label">Total Despesas</div>
+        <div class="card-value" id="vDespesas">—</div>
+        <div class="card-badge" id="bDespesas">—</div>
+      </div>
+
+      <div class="card" id="cardReceber">
+        <div class="card-label">Total a Receber</div>
+        <div class="card-value" id="vReceber">—</div>
+        <div class="card-badge" id="bReceber">—</div>
+      </div>
+
+      <div class="card" id="cardRecebido">
+        <div class="card-label">Total Recebido</div>
+        <div class="card-value" id="vRecebido">—</div>
+        <div class="card-badge" id="bRecebido">—</div>
+      </div>
+
+      <div class="card" id="cardSaldo">
+        <div class="card-label">Saldo</div>
+        <div class="card-value" id="vSaldo">—</div>
+        <div class="card-badge" id="bSaldo">—</div>
+      </div>
+
+      <div class="card" id="cardRestante">
+        <div class="card-label">Restante (parcelas)</div>
+        <div class="card-value" id="vRestante">—</div>
+        <div class="card-badge" id="bRestante">—</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Alertas</div>
+        <div class="panel-hint" id="lastSync">—</div>
+      </div>
+      <div class="alerts" id="alerts"></div>
+    </section>
+
+    <section class="grid2">
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Receita x Despesa</div>
+          <div class="panel-hint">Mês selecionado</div>
+        </div>
+        <canvas id="barChart" height="220"></canvas>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Distribuição</div>
+          <div class="panel-hint">KPIs</div>
+        </div>
+        <canvas id="pieChart" height="220"></canvas>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div>Instale no Android: menu ⋮ → <b>Adicionar à tela inicial</b></div>
+      <div class="muted">PWA offline com cache (Service Worker)</div>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
